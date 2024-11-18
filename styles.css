@@ -1,0 +1,117 @@
+/* Add your styling here */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.survey {
+    margin: 20px 0;
+}
+
+.major-selection {
+    margin: 20px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-top: 20px;
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+.semester-row {
+    display: flex;
+    justify-content: space-around;
+	width: 100%
+}
+
+.semester {
+    width: 40%;
+    border: 2px solid black;
+	border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+.dropzone {
+    border: 1px dashed gray;
+    min-height: 50px;
+    margin-top: 10px;
+    position: relative;
+	border-radius: 5px;
+}
+
+.card {
+    background-color: #0c2340;
+    border: 1px solid #0c2340;
+    padding: 10px;
+    margin: 5px;
+    cursor: move;
+	color: white;
+	border-radius: 10px;
+}
+
+.card.red {
+    background-color: #c19227;
+	color: white;
+}
+
+#ap-courses fieldset {
+    display: flex;
+    flex-direction: column;
+	width: 20%; 
+	margin-left: auto; 
+	margin-right:auto;
+}
+
+#ap-courses label {
+    margin-bottom: 10px; /* Optional: add space between the checkboxes */
+}
+
+  /* The popup */
+  .hover-popup {
+    position: absolute;
+    bottom: 120%; /* Position above the element */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #777;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    transition: visibility 0s linear 2s, opacity 0s linear 2s; /* Delay visibility */
+  }
+
+  /* Show the popup after hovering for 1 second */
+  .card:hover .hover-popup {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 2s, opacity 0s linear 2s; /* Remove delay for visibility on show */
+  }
+
+  /* Reset the visibility and opacity on hover end */
+  .card:not(:hover) .hover-popup {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 1s, opacity 0s linear 1s; /* No delay on hide */
+  }
+  
+  .info-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: none; /* Initially hidden */
+    z-index: 1000;	/* Ensure it appears above other elements */
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advising App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advising App</h1>
+
+        <!-- Program Selection Dropdown -->
+        <div>
+            <label for="program-selection">Select Your Program:</label>
+            <select id="program-selection">
+                <option value="" selected disabled>Select Your Program</option>
+                <option value="acms-no-concentration">ACMS Major</option>
+                <option value="acms-bio-concentration">ACMS Major - Bio Concentration</option>
+                <option value="acms-sci-comp-concentration">ACMS Major - Sci Comp Concentration</option>
+                <option value="acms-supplemental">ACMS Supplemental Major</option>
+                <option value="statistics">Statistics Major</option>
+                <option value="statistics-supplemental">Statistics Supplemental Major</option>
+            </select>
+        </div>
+
+<div id="info-box" class="info-box">
+    <!-- This will be dynamically populated -->
+</div>
+        <!-- Survey Section (AP Courses) -->
+        <div class="survey" id="ap-courses">
+<fieldset>
+        <legend>AP Courses</legend>
+        <label>
+            <input type="checkbox" id="ap-calc1"> Do you have AP credit for Calculus AB?
+        </label>
+        <label>
+            <input type="checkbox" id="ap-calc2"> Do you have AP credit for Calculus BC?
+        </label>
+        <label class = "ap-chem-checkbox" style = "display:none;">
+            <input type="checkbox" id="ap-chem"> Do you have AP credit for Chemistry?
+        </label>
+        <label class = "ap-phys-checkbox" style = "display:none;">
+            <input type="checkbox" id="ap-phys"> Do you have AP credit for Physics?
+        </label>
+        <label class="ap-bio-checkbox" style="display:none;">
+            <input type="checkbox" id="ap-bio"> Do you have AP credit for Biology I?
+        </label>
+
+    </fieldset>
+</div>
+
+        <!-- Course Plan Section (Grid layout) -->
+		<div class="dropzone" data-semester="0" style="display: none; "></div>
+
+        <div id="course-plan" class="grid" >
+            <!-- 4 rows for 4 years, each with Fall and Spring columns -->
+            <div class="semester-row">
+                <div class="semester" data-semester="1">
+                    <h3>Fall 1st Year</h3>
+                    <div class="dropzone" data-semester="1"></div>
+                </div>
+                <div class="semester" data-semester="2">
+                    <h3>Spring 1st Year</h3>
+                    <div class="dropzone" data-semester="2"></div>
+                </div>
+            </div>
+            <div class="semester-row">
+                <div class="semester" data-semester="3">
+                    <h3>Fall 2nd Year</h3>
+                    <div class="dropzone" data-semester="3"></div>
+                </div>
+                <div class="semester" data-semester="4">
+                    <h3>Spring 2nd Year</h3>
+                    <div class="dropzone" data-semester="4"></div>
+                </div>
+            </div>
+            <div class="semester-row">
+                <div class="semester" data-semester="5">
+                    <h3>Fall 3rd Year</h3>
+                    <div class="dropzone" data-semester="5"></div>
+                </div>
+                <div class="semester" data-semester="6">
+                    <h3>Spring 3rd Year</h3>
+                    <div class="dropzone" data-semester="6"></div>
+                </div>
+            </div>
+            <div class="semester-row">
+                <div class="semester" data-semester="7">
+                    <h3>Fall 4th Year</h3>
+                    <div class="dropzone" data-semester="7"></div>
+                </div>
+                <div class="semester" data-semester="8">
+                    <h3>Spring 4th Year</h3>
+                    <div class="dropzone" data-semester="8"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
