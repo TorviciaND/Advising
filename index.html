@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Advising App</h1>
+        <h1>ACMS Advising Helper</h1>
 
         <!-- Program Selection Dropdown -->
         <div>
@@ -23,36 +23,65 @@
                 <option value="statistics-supplemental">Statistics Supplemental Major</option>
             </select>
         </div>
+		
+		        <!-- Study Abroad Selection Dropdown -->
+        <div style = "margin-top: 5px;">
+            <label for="abroad-selection">Where do you plan to study abroad?</label>
+            <select id="abroad-selection">
+                <option value="none">I do not plan to study abroad.</option>
+                <option value="alcoy">Alcoy, Spain</option>
+                <option value="beijing">Beijing, China</option>
+                <option value="budapest">Budapest, Hungary</option>
+                <option value="galway">Co. Galway, Ireland</option>
+                <option value="dublin-city">Dublin City University</option>
+                <option value="dublin">Dublin, Ireland</option>
+				<option value="heidelberg">Heidelberg, Germany</option>
+                <option value="hong_kong">Hong Kong University</option>
+                <option value="kyoto">Kyoto, Japan</option>
+                <option value="singapore">National University of Singapore</option>
+                <option value="perth">Perth, Australia</option>
+                <option value="saint_andrews">St. Andrews, Scotland</option>
+				<option value="sydney">Sydney, Australia</option>
+                <option value="trinity">Trinity College, Dublin</option>
+            </select>
+        </div>
 
-<div id="info-box" class="info-box">
-    <!-- This will be dynamically populated -->
-</div>
-        <!-- Survey Section (AP Courses) -->
+		<div id="info-box" class="info-box">
+			<!-- This will be dynamically populated -->
+		</div>
+		
+				<!-- Survey Section (AP Courses) -->
         <div class="survey" id="ap-courses">
-<fieldset>
-        <legend>AP Courses</legend>
-        <label>
-            <input type="checkbox" id="ap-calc1"> Do you have AP credit for Calculus AB?
-        </label>
-        <label>
-            <input type="checkbox" id="ap-calc2"> Do you have AP credit for Calculus BC?
-        </label>
-        <label class = "ap-chem-checkbox" style = "display:none;">
-            <input type="checkbox" id="ap-chem"> Do you have AP credit for Chemistry?
-        </label>
-        <label class = "ap-phys-checkbox" style = "display:none;">
-            <input type="checkbox" id="ap-phys"> Do you have AP credit for Physics?
-        </label>
-        <label class="ap-bio-checkbox" style="display:none;">
-            <input type="checkbox" id="ap-bio"> Do you have AP credit for Biology I?
-        </label>
+			<fieldset>
+				<legend>AP Courses</legend>
+				<label>
+					<input type="checkbox" id="ap-calc1"> Did you score a 5 on the AP Calculus AB Exam?
+				</label>
+				<label>
+					<input type="checkbox" id="ap-calc2"> Did you score a 5 on the AP Calculus BC Exam?
+				</label>
+				<label class = "ap-chem-checkbox" style = "display:none;">
+					<input type="checkbox" id="ap-chem"> Did you score a 5 on the AP Chemistry Exam?
+				</label>
+				<label class = "ap-phys-checkbox" style = "display:none;">
+					<input type="checkbox" id="ap-phys"> Did you score a 4 or 5 on the AP Physics C, Mechanics Exam?
+				</label>
+				<label class = "ap-phys2-checkbox" style = "display:none;">
+					<input type="checkbox" id="ap-phys2"> Did you score a 4 or 5 on the AP Physics C, Elect and Magnetism Exam?
+				</label>
+				<label class="ap-bio-checkbox" style="display:none;">
+					<input type="checkbox" id="ap-bio"> Did you score a 5 on the AP Biology Exam?
+				</label>
 
-    </fieldset>
-</div>
+			</fieldset>
+		</div>
+
+
 
         <!-- Course Plan Section (Grid layout) -->
 		<div class="dropzone" data-semester="0" style="display: none; "></div>
-
+		<div>
+		<div id = "bulkContainer">
         <div id="course-plan" class="grid" >
             <!-- 4 rows for 4 years, each with Fall and Spring columns -->
             <div class="semester-row">
@@ -96,7 +125,22 @@
                 </div>
             </div>
         </div>
-    </div>
+
+					<p>Please note that the information presented here is for information purposes only.  Course requirements could change or courses may not always be offered in every semester. Please check in with your advisor each semester.
+
+			</div>
+				<div id="side-panel" class = "hidden">
+				<h2>Study Abroad Options</h2>
+					<div id="side-panel-content">
+				<!-- Dynamically populate substitution details -->
+					</div>
+				<button id="close-panel">Close</button>
+			</div>
+		</div>
+	
+	</div>
+	</div>
+	
 
     <script src="script.js"></script>
 </body>

@@ -24,8 +24,8 @@ const coursePrerequisites = {
 	'cellbio': ['bio2', 'chemistry2'],
 	'bio-elective': ['bio2'],
 	'bcp-elective': [],
-	'sci-comp1': [],
-	'sci-comp2': ['sci-comp1'],
+	'sci-comp': [],
+	'sci-comp2': ['sci-comp'],
 	'mathematical-statistics': ['stat-methods'],
 };
 
@@ -34,9 +34,9 @@ const courseInfo = {
     'chemistry2': ['CHEM 10172 or CHEM 10122<br><hr>Chemistry I prerequisite'],
     'physics1': ['PHYS 10310<br><hr>No prerequisites'], 
     'physics2': ['PHYS 10320<br><hr>Physics I prerequisite'],
-    'calc1': ['ACMS 10550 Preferred<br><hr>MATH 10550 or MATH 10850 can be substituted<br><hr>No prerequisites'], 
-    'calc2': ['ACMS 10560 Preferred<br><hr>MATH 10560 or MATH 10860 can be substituted<br><hr>Calculus I prerequisite'],
-    'linear-algebra': ['ACMS 20620<br><hr>MATH 20610 will be accepted for students switching into the ACMS major<br><hr>Calculus I prerequisite'],
+    'calc1': ['ACMS 10550 Preferred<br><hr>MATH 10350, MATH 10550 or MATH 10850 can be substituted<br><hr>No prerequisites'], 
+    'calc2': ['ACMS 10560 Preferred<br><hr>MATH 10360, MATH 10560 or MATH 10860 can be substituted<br><hr>Calculus I prerequisite'],
+    'linear-algebra': ['ACMS 20620<br><hr>MATH 20610 or MATH 20580 will be accepted for students switching into the ACMS major<br><hr>Calculus I prerequisite'],
     'math-methods1': ['ACMS 20550<br><hr>MATH 20550 will be accepted for students switching into the ACMS major<br><hr>Calculus II prerequisite'],
     'math-methods2': ['ACMS 20750<br><hr>Mathematical Methods I prerequisite'],
     'probability': ['ACMS 30530<br><hr>MATH 30530 will be accepted for students switching into the ACMS major<br><hr>Mathematical Methods I prerequisite'],
@@ -65,6 +65,45 @@ const courseInfo = {
 
 };
 
+const transferCourses = {
+	alcoy: ['acms-elective1'],
+	beijing:['math-stat', 'acms-elective1', 'acms-math-elective', 'acms-elective2'],
+	budapest:['acms-elective1'],
+	galway:['numerical-analysis', 'acms-elective1','acms-elective2'],
+	dublin_city:['acms-elective1'],
+	dublin:['acms-elective1', 'acms-elective2', 'math-stat', 'modeling', 'stat-elective1', 'stat-elective2', 'acms-math-elective'],
+	heidelberg:['acms-elective1'],
+	hong_kong:['math-stat'],
+	kyoto:['linear-algebra', 'acms-elective1'],
+	singapore:['acms-elective1', 'acms-elective2', 'stat-elective1', 'stat-elective2'],
+	perth:['math-methods2', 'probability', 'acms-elective1', 'modeling', 'acms-elective2', 'stat-elective1', 'stat-elective2'],
+	saint_andrews:['acms-elective1', 'stat-elective1', 'acms-elective2'],
+	sydney:['acms-elective1', 'stat-elective1'],
+	trinity:['sci-comp', 'acms-elective1', 'acms-elective2', 'acms-math-elective', 'math-stat', 'stat-elective1', 'stat-elective2', 'modeling', 'stat-elective3']
+};
+
+const transferCourseList = {
+	alcoy: ["11662 Estadisitica: ACMS elective"],
+	beijing:["00135460 Mathematical Statistics: Mathematical Statistics elective<br><br>02838160 Data Analytics and Statistical Software:ACMS elective<br><br>02804020 Regression Analysis in Management Research:ACMS Elective<br><br>02831540 Financial Modeling: ACMS elective<br><br>02532420 Introduction to Financial Engineering: ACMS/Math elective"],
+	budapest:["MATH 373 Statistical Methods - Mathematical Theory with Data Science Applications: ACMS elective"],
+	galway:["MA 378 Numerical Analysis II: Numerical Analysis Requirement<br><br>CS 319 Scientific Computing: ACMS elective<br><br>MP 237 Mechanics: ACMS elective"],
+	dublin_city:["CA 266 Probability and Statistics: ACMS elective<br><br>MS Probabilities and Statistics: ACMS elective"],
+	dublin:["ACM 30070 Computational Finance: ACMS elective<br>STAT 20060 Probability Statstics: ACMS elective<br>STAT 20100 Inferential Statistics: ACMS elective<br>ACM 30190 Dynaical Systems: ACMS elective<br>STAT 30090 Stochstics Models:  Modeling requirement<br>MST 30070 Geometry: ACMS elective<br>ACM 30100 Maths of Machine Learning: ACMS elective<br>STAT 30270 Statistical Data Mining: ACMS or STAT elective<br>STAT 30080 Models- Survival Models: ACMS or STAT elective"],
+	heidelberg:["MATHMA8 Einfuhrung in die Wahrsheinlichkeitstheorie und Statistik: ACMS elective"],
+	hong_kong:["STAT 2602 Probability and Statistics II: Mathematical Statistics"],
+	kyoto:["Natural Sciences (MATH)N 106001 Advanced Linear Algebra: Linear Algebra<br>Informatics T057002 Fundamentals of Artifical Intelligence: ACMS elective"],
+	singapore:["ST 3240 Multivariate Statistical Analysis: ACMS or STAT elective<br>ST 3243 Statistical Methods in Epidemiology: ACMS or STAT elective"],
+	perth:["MATH 2021 Introduction to Applied Mathematics: Mathematical Methods I<br>STAT 30602 Statistical Science: ACMS elective<br>STAT2063 Probabilistic Methods and Their Applications: ACMS elective<br>STAT 2062 Fundamentals of Probability with Applications: Probability<br>STAT3061 Random Processes and their Applications: Modeling<br>STAT 3405 Introduction to Bayesian Computing and Statistics: ACMS or STAT elective<br>STAT 3406 Applied Statistics and Data Visualization: ACMS or STAT elective"],
+	saint_andrews:["MT 4537 Spatial Statistics: ACMS or STAT elective<br>MT 4539 Qunantitative Risk Management: ACMS elective"],
+	sydney:["STAT 3925 Time Series (Advanced): ACMS or STAT elective"],
+	trinity:["MA 1264 Introduction to Programming in C/C++: Scientific Computing<br>MATH 22S6 Numerical and Data Analysis Techniques: ACMS elective<br>EEU33E03 Probability and Statistics: ACMS elective<br>ST 3009 Statistical Methods for Computer Science: ACMS elective<br>STAT 3458 Statistical Inference II: Mathematical Statistics<br>ST 1252 Introduction to Statistics II: ACMS or STAT elective<br>STU 34503 Stochastic Models in Space and Time I: Modeling<br>STU 33010 Forecasting: ACMS or STAT elective<br>ST 3455 Modern Statistical Methods 1: ACMS or STAT elective<br>ST 3456 Modern Statistical Methods 2: ACMS or STAT elective<br>STU 33011 Multivariate Linear Analysis: ACMS or STAT elective<br>STU 33002 Statistical Analysis 3: ACMS or STAT elective"]
+};
+
+var numCourseTransfer = 0;
+
+
+const bulkContainer = document.getElementById("bulkContainer");
+  
 // Initialize drag-and-drop for all cards
 function initializeDragAndDrop() {
     const draggableCards = document.querySelectorAll('.card');
@@ -102,8 +141,6 @@ function initializeDragAndDrop() {
         });
     });
 }
-
-
 
 function clearAllDropzones() {
     // Select all dropzones
@@ -311,7 +348,9 @@ function setCardSemester(cardId, semester) {
     // Find the corresponding dropzone for the given semester
     const dropzone = document.querySelector(`.dropzone[data-semester="${semester}"]`);
 
-        dropzone.appendChild(card);
+    setTimeout(() => {
+		dropzone.appendChild(card);
+    }, 250); // Adding a delay here for smoother animation
     
 }
 
@@ -382,6 +421,18 @@ function handleAPPhysicsChange(event) {
     }
 }
 
+// Function to handle prerequisites when AP Physics checkbox is changed
+function handleAPPhysics2Change(event) {
+    const physics1 = document.getElementById('physics2');
+    if (event.target.checked) {
+        physics2.style.display = 'none'; // Hide Physics I
+		setCardSemester('physics2', 0);
+    } else {
+        physics2.style.display = 'block'; // Show Physics I
+		setCardSemester('physics2', 2);
+    }
+}
+
 function handleAPBioChange(event) {
     const bio1 = document.getElementById('bio1');
     if (event.target.checked) {
@@ -407,11 +458,66 @@ function toggleCheckboxes(selector, action) {
     });
 }
 
+function highlightTransferableCourses(location) {
+	numCourseTransfer = 0;
+	
+    // Get all the cards
+    const allCards = document.querySelectorAll('.card');
+
+    // Get the courses for the selected location
+    const locationCourses = transferCourses[location] || [];
+
+    // Loop through each card
+    allCards.forEach(card => {
+        const courseId = card.id; // Assuming card's ID corresponds to the course ID
+
+        if (locationCourses.includes(courseId)) {
+            // Highlight transferable courses
+            card.classList.add('highlight');
+			numCourseTransfer = numCourseTransfer + 1;
+        } else {
+            // Remove highlight for non-transferable courses
+            card.classList.remove('highlight');
+        }
+    });
+}
+
+function showTransferableCourses(locationId) {
+    const courses = transferCourseList[locationId] || [];
+    const sidePanel = document.getElementById("side-panel");
+    const contentDiv = document.getElementById("side-panel-content");
+
+    // Clear existing content
+    contentDiv.innerHTML = "";
+
+    if (courses.length > 0 & numCourseTransfer > 0) {
+        // Populate the side panel with the courses
+        courses.forEach(course => {
+            const courseItem = document.createElement("p");
+            courseItem.innerHTML = course;
+            contentDiv.appendChild(courseItem);
+        });
+    } else {
+        // Show a message if no courses are available
+        const noCoursesMessage = document.createElement("p");
+        noCoursesMessage.textContent = "No transferable courses available.";
+        contentDiv.appendChild(noCoursesMessage);
+    }
+
+    // Make the side panel visible
+    sidePanel.classList.remove("hidden");
+	
+	//change style of the bulkContainer
+	bulkContainer.style.width = "70%"; // Set the width
+	bulkContainer.style.float = "left"; // Set the float
+}
+
 // Event listeners for checkbox changes
 document.getElementById('ap-calc1').addEventListener('change', handleAPCalculusIChange);
 document.getElementById('ap-calc2').addEventListener('change', handleAPCalculusIIChange);
 document.getElementById('ap-chem').addEventListener('change', handleAPChemistryChange);
 document.getElementById('ap-phys').addEventListener('change', handleAPPhysicsChange);
+document.getElementById('ap-phys2').addEventListener('change', handleAPPhysics2Change);
 document.getElementById('ap-bio').addEventListener('change', handleAPBioChange);
 
 // Initialize the app
@@ -427,17 +533,20 @@ document.getElementById('program-selection').addEventListener('change', (event) 
             populateFullMajorCourses('none');
             toggleCheckboxes('.ap-bio-checkbox', 'hide');
 			toggleCheckboxes('.ap-phys-checkbox', 'show');
+			toggleCheckboxes('.ap-phys2-checkbox', 'show');
 			toggleCheckboxes('.ap-chem-checkbox', 'show');			// Hide AP Bio checkboxes
             break;
         case 'acms-bio-concentration':
             populateFullMajorCourses('bio');
 			toggleCheckboxes('.ap-phys-checkbox', 'show');
+			toggleCheckboxes('.ap-phys2-checkbox', 'show');
 			toggleCheckboxes('.ap-chem-checkbox', 'show');
             toggleCheckboxes('.ap-bio-checkbox', 'show'); // Show AP Bio checkboxes
             break;
         case 'acms-sci-comp-concentration':
             populateFullMajorCourses('scientific-computing');
 			toggleCheckboxes('.ap-phys-checkbox', 'show');
+			toggleCheckboxes('.ap-phys2-checkbox', 'show');
 			toggleCheckboxes('.ap-chem-checkbox', 'show');
             toggleCheckboxes('.ap-bio-checkbox', 'hide'); // Hide AP Bio checkboxes
             break;
@@ -445,11 +554,13 @@ document.getElementById('program-selection').addEventListener('change', (event) 
             populateFullMajorCourses('acms-supplemental');
             toggleCheckboxes('.ap-bio-checkbox', 'hide'); // Hide AP Bio checkboxes
 			toggleCheckboxes('.ap-phys-checkbox', 'hide');
+			toggleCheckboxes('.ap-phys2-checkbox', 'hide');
 			toggleCheckboxes('.ap-chem-checkbox', 'hide');
             break;
         case 'statistics':
             populateFullMajorCourses('statistics');
 			toggleCheckboxes('.ap-phys-checkbox', 'show');
+			toggleCheckboxes('.ap-phys2-checkbox', 'show');
 			toggleCheckboxes('.ap-chem-checkbox', 'show');
             toggleCheckboxes('.ap-bio-checkbox', 'hide'); // Hide AP Bio checkboxes
             break;
@@ -457,12 +568,18 @@ document.getElementById('program-selection').addEventListener('change', (event) 
             populateFullMajorCourses('statistics-supplemental');
             toggleCheckboxes('.ap-bio-checkbox', 'hide'); // Hide AP Bio checkboxes
 			toggleCheckboxes('.ap-phys-checkbox', 'hide');
+			toggleCheckboxes('.ap-phys2-checkbox', 'hide');
 			toggleCheckboxes('.ap-chem-checkbox', 'hide');
             break;
         default:
             console.error('Unknown program selected!');
             toggleCheckboxes('.ap-bio-checkbox', 'hide'); // Hide AP Bio checkboxes for invalid selection
     }
+	
+	highlightTransferableCourses(document.getElementById("abroad-selection").value);
+	showTransferableCourses(document.getElementById("abroad-selection").value);
+	
+	
 });
 
 //initialize popup
@@ -471,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let hoverTimeout; // Timeout ID to control delay
 
-    // Event delegation to handle dynamically created cards
+    // Event delegation to handle dynamically created and moved cards
     document.body.addEventListener('mouseover', event => {
         const card = event.target.closest('.card');
         if (card) {
@@ -482,15 +599,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Set the content of the info-box
                     infoBox.innerHTML = courseInfo[courseId];
 
-                    // Get the card's position and size
+                    // Recalculate the card's position and size
                     const cardRect = card.getBoundingClientRect();
                     
-                    // Position the info-box relative to the card's position
+                    // Position the info-box relative to the card's current position
                     const offset = 10; // Optional: adds some space from the card
                     infoBox.style.left = `${cardRect.left + window.scrollX + offset}px`;
-                    infoBox.style.top = `${cardRect.top + window.scrollY + offset}px`;
+                    infoBox.style.top = `${cardRect.bottom + window.scrollY + offset}px`; // Display below the card
 
-                    // Make sure the info-box is displayed
+                    // Ensure the info-box is displayed
                     infoBox.style.display = 'block';
                 }, 500); // 500ms delay
             }
@@ -504,7 +621,22 @@ document.addEventListener('DOMContentLoaded', () => {
             infoBox.style.display = 'none'; // Hide the info-box
             infoBox.innerHTML = ''; // Clear the content
         }
-    });
+    }); 
 });
 
+document.getElementById("abroad-selection").addEventListener("change", function() {
+  // Define the transfer classes for each study abroad option
+
+  // Get the selected option
+  const selectedOption = this.value;
+  highlightTransferableCourses(selectedOption);
+  showTransferableCourses(selectedOption);
+  
+});
+
+document.getElementById("close-panel").addEventListener("click", () => {
+    document.getElementById("side-panel").classList.add("hidden");
+	bulkContainer.style.width = "100%"; // Set the width
+	bulkContainer.style.float = "center"; // Set the float
+});
 

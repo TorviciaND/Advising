@@ -3,6 +3,10 @@
     width: 80%;
     margin: 0 auto;
     text-align: center;
+	border: 2px solid #c19227; /* Gold border for contrast */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .survey {
@@ -21,6 +25,7 @@
     margin-top: 20px;
 	margin-left: auto; 
 	margin-right: auto;
+    padding: 20px;
 }
 
 .semester-row {
@@ -31,29 +36,48 @@
 
 .semester {
     width: 40%;
-    border: 2px solid black;
-	border-radius: 5px;
-    padding: 5px;
+    background-color: #f8f8f8;
+    border: 2px solid #c19227; /* Gold border for contrast */
+    border-radius: 10px;
+    padding: 10px;
     margin: 10px;
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.semester:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .dropzone {
-    border: 1px dashed gray;
-    min-height: 50px;
+    background-color: rgba(12, 35, 64, 0.1); /* Transparent blue background */
+    min-height: 60px;
     margin-top: 10px;
     position: relative;
-	border-radius: 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.dropzone:hover {
+    background-color: rgba(12, 35, 64, 0.2); /* Slightly darker on hover */
 }
 
 .card {
-    background-color: #0c2340;
-    border: 1px solid #0c2340;
+    background-color: #0c2340; /* Navy blue */
+    border: 1px solid #c19227; /* Gold border */
     padding: 10px;
     margin: 5px;
     cursor: move;
-	color: white;
-	border-radius: 10px;
+    color: white;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card:hover {
+    background-color: #1a3c66; /* Slightly lighter blue */
+    transform: translateY(-5px);
 }
 
 .card.red {
@@ -61,10 +85,16 @@
 	color: white;
 }
 
+.highlight {
+    background-color: green;
+    font-weight: bold;
+    border: 2px solid green;
+}
+
 #ap-courses fieldset {
     display: flex;
     flex-direction: column;
-	width: 20%; 
+	width: 50%; 
 	margin-left: auto; 
 	margin-right:auto;
 }
@@ -79,14 +109,16 @@
     bottom: 120%; /* Position above the element */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #777;
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     visibility: hidden;
     opacity: 0;
     white-space: nowrap;
     transition: visibility 0s linear 2s, opacity 0s linear 2s; /* Delay visibility */
+	font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   /* Show the popup after hovering for 1 second */
@@ -107,11 +139,29 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px;
+    background-color: #c19227; /* Blue background */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: none; /* Initially hidden */
     z-index: 1000;	/* Ensure it appears above other elements */
+}
+
+#side-panel {
+	width: 25%;
+	height: 100%;
+	background: #f4f4f4;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+	float: left;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+	margin-top: 50px;
+	margin-left: auto; 
+	margin-right: auto;
+}
+#side-panel.hidden {
+	display: none;
 }
