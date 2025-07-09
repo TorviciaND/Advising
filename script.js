@@ -381,6 +381,8 @@ function handleAPCalculusIIChange(event) {
         setCardSemester('calc2', 0);
         setCardSemester('math-methods1', 1)
 		setCardSemester('math-methods2', 2)
+		setCardSemester('probability', 3)
+		setCardSemester('stat-methods', 4)
 
         document.getElementById('math-methods1').classList.remove('red');
     } else {
@@ -388,6 +390,8 @@ function handleAPCalculusIIChange(event) {
         setCardSemester('calc2', 2);
         setCardSemester('math-methods1', 3)
 		setCardSemester('math-methods2', 4)
+		setCardSemester('probability', 5)
+		setCardSemester('stat-methods', 6)
     }
 }
 
@@ -512,6 +516,17 @@ function showTransferableCourses(locationId) {
 	bulkContainer.style.float = "left"; // Set the float
 }
 
+function printSection(sectionId) {
+	var printContent = document.getElementById(sectionId).innerHTML;
+	var originalContent = document.body.innerHTML; // Save the full page content
+
+	document.body.innerHTML = printContent;
+	window.print(); // Trigger print dialog
+
+	// Restore the original page content after printing
+	document.body.innerHTML = originalContent;
+}
+
 // Event listeners for checkbox changes
 document.getElementById('ap-calc1').addEventListener('change', handleAPCalculusIChange);
 document.getElementById('ap-calc2').addEventListener('change', handleAPCalculusIIChange);
@@ -577,7 +592,7 @@ document.getElementById('program-selection').addEventListener('change', (event) 
     }
 	
 	highlightTransferableCourses(document.getElementById("abroad-selection").value);
-	showTransferableCourses(document.getElementById("abroad-selection").value);
+	//showTransferableCourses(document.getElementById("abroad-selection").value);  //Uncomment this if you want the transfer courses to show.
 	
 	
 });
@@ -630,7 +645,7 @@ document.getElementById("abroad-selection").addEventListener("change", function(
   // Get the selected option
   const selectedOption = this.value;
   highlightTransferableCourses(selectedOption);
-  showTransferableCourses(selectedOption);
+  //showTransferableCourses(selectedOption);  //Uncomment this if we want the transfer courses to show again.
   
 });
 

@@ -23,28 +23,6 @@
                 <option value="statistics-supplemental">Statistics Supplemental Major</option>
             </select>
         </div>
-		
-		        <!-- Study Abroad Selection Dropdown -->
-        <div style = "margin-top: 5px;">
-            <label for="abroad-selection">Where do you plan to study abroad?</label>
-            <select id="abroad-selection">
-                <option value="none">I do not plan to study abroad.</option>
-                <option value="alcoy">Alcoy, Spain</option>
-                <option value="beijing">Beijing, China</option>
-                <option value="budapest">Budapest, Hungary</option>
-                <option value="galway">Co. Galway, Ireland</option>
-                <option value="dublin-city">Dublin City University</option>
-                <option value="dublin">Dublin, Ireland</option>
-				<option value="heidelberg">Heidelberg, Germany</option>
-                <option value="hong_kong">Hong Kong University</option>
-                <option value="kyoto">Kyoto, Japan</option>
-                <option value="singapore">National University of Singapore</option>
-                <option value="perth">Perth, Australia</option>
-                <option value="saint_andrews">St. Andrews, Scotland</option>
-				<option value="sydney">Sydney, Australia</option>
-                <option value="trinity">Trinity College, Dublin</option>
-            </select>
-        </div>
 
 		<div id="info-box" class="info-box">
 			<!-- This will be dynamically populated -->
@@ -79,6 +57,7 @@
 
 
         <!-- Course Plan Section (Grid layout) -->
+		<div id="printable-area">
 		<div class="dropzone" data-semester="0" style="display: none; "></div>
 		<div>
 		<div id = "bulkContainer">
@@ -137,9 +116,12 @@
 				<button id="close-panel">Close</button>
 			</div>
 		</div>
+		</div>
 	
 	</div>
 	</div>
+	<button id="printButton" onclick="printSection('printable-area')">Print & Save as PDF</button>
+
 	
 
     <script src="script.js"></script>

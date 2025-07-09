@@ -165,3 +165,26 @@
 #side-panel.hidden {
 	display: none;
 }
+
+#printButton {
+	display: block;
+	margin: 50px auto;
+	padding: 10px 20px;
+	font-size: 18px;
+	background-color: #c19227;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+#printButton:hover {
+	background-color: #92732d;
+}
+
+@media print {
+    #printable-area {
+        transform: scale(0.9); /* Adjust scaling */
+        transform-origin: top left;
+        width: 100%;
+    }
