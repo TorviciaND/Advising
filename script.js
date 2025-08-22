@@ -24,7 +24,7 @@ const coursePrerequisites = {
 	'cellbio': ['bio2', 'chemistry2'],
 	'bio-elective': ['bio2'],
 	'bcp-elective': [],
-	'sci-comp': [],
+	'sci-comp': ['calc2'],
 	'sci-comp2': ['sci-comp'],
 	'mathematical-statistics': ['stat-methods'],
 };
@@ -54,7 +54,7 @@ const courseInfo = {
 	'cellbio': ['BIOS 30341 or BIOS 30312<br><hr>Chemistry II and Biology II prerequisites'],
 	'bio-elective': ['This course is fulfilled by taking 3 credits in BIOS which has BIOS 10172 or BIOS 20202 as a prerequisite'],
 	'bcp-elective': ['See GPS for specific options on electives'],
-	'sci-comp': ['ACMS 20220 Preferred<br><hr>CBE 20258, CSE 20311 or PHYS 20420 will also be accepted<br><hr>No prerequisite'],
+	'sci-comp': ['ACMS 20220 Preferred<br><hr>CBE 20258, CSE 20311 or PHYS 20420 will also be accepted<br><hr>Calculus II prerequisite'],
 	'sci-comp2': ['ACMS 40210 or 40212<br><hr>First course in Scientific computing prerequisite'],
 	'sc-elective1': ['See GPS for specific options on electives'],
     'sc-elective2': ['See GPS for specific options on electives'],
@@ -283,7 +283,8 @@ function populateFullMajorCourses(program = 'none') {
             { id: 'probability', name: 'Probability', semester: 5 },
             { id: 'stat-methods', name: 'Statistical Methods', semester: 6 },
 			{ id: 'math-stat', name: 'Mathematical Statistics', semester: 7 },
-            { id: 'stat-elective1', name: 'Statistics Elective', semester: 8 },
+            { id: 'stat-elective1', name: 'Statistics Elective 1', semester: 7 },
+			{ id: 'stat-elective2', name: 'Statistics Elective 2', semester: 8 },
         ];
     }
 
